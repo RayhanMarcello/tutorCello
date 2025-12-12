@@ -51,11 +51,19 @@
               <p class="text-sm font-semibold text-slate-800">{{ userName }}</p>
               <p class="text-xs text-slate-500">{{ userSchool }}</p>
             </div>
-            <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            <svg
+              class="w-4 h-4 text-slate-600"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"></path>
             </svg>
           </div>
-          
+
           <!-- Dropdown Menu -->
           <transition
             enter-active-class="transition duration-200 ease-out"
@@ -68,14 +76,24 @@
               v-if="showUserMenu"
               class="absolute top-full right-0 mt-2 w-56 bg-white rounded-lg shadow-xl border border-slate-200 py-2 z-50">
               <div class="px-4 py-3 border-b border-slate-200">
-                <p class="text-sm font-semibold text-slate-800">{{ userName }}</p>
+                <p class="text-sm font-semibold text-slate-800">
+                  {{ userName }}
+                </p>
                 <p class="text-xs text-slate-500">{{ userSchool }}</p>
               </div>
               <button
                 @click="logout"
                 class="w-full px-4 py-2 text-left text-sm text-red-600 hover:bg-red-50 transition-colors duration-200 flex items-center space-x-2">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path>
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path>
                 </svg>
                 <span>Logout</span>
               </button>
@@ -165,8 +183,16 @@
             <button
               @click="logout"
               class="w-full px-4 py-2 text-left text-sm text-red-600 hover:bg-red-50 rounded-lg transition-colors duration-200 flex items-center space-x-2">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path>
+              <svg
+                class="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path>
               </svg>
               <span>Logout</span>
             </button>
@@ -179,43 +205,44 @@
 
 <script setup>
 import { ref, computed, onMounted } from "vue";
-import { useRouter } from 'vue-router'
+import { useRouter } from "vue-router";
 
-const router = useRouter()
+const router = useRouter();
 const mobileMenuOpen = ref(false);
 const showUserMenu = ref(false);
 const userData = ref(null);
 
 const userName = computed(() => {
   if (userData.value && userData.value.username) {
-    return userData.value.username
+    return userData.value.username;
   }
-  return "User"
+  return "User";
 });
 
 const userSchool = computed(() => {
   if (userData.value && userData.value.school) {
-    return userData.value.school
+    return userData.value.school;
   }
-  return ""
+  return "";
 });
 
 onMounted(() => {
-  const storedData = localStorage.getItem('userData')
+  const storedData = localStorage.getItem("userData");
   if (storedData) {
-    userData.value = JSON.parse(storedData)
+    userData.value = JSON.parse(storedData);
   }
-})
+});
 
 const logout = () => {
-  localStorage.removeItem('userData')
-  router.push('/login')
-}
+  localStorage.removeItem("userData");
+  router.push("/login");
+};
 
 const navLinks = [
   { name: "Beranda", path: "/" },
   { name: "Kelas", path: "/kelas" },
   { name: "Harga", path: "/harga" },
   { name: "Tentang", path: "/tentang" },
+  { name: "About Me", path: "/about-me" },
 ];
 </script>

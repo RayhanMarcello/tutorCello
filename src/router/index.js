@@ -32,6 +32,11 @@ const router = createRouter({
       path: '/tentang',
       name: 'about',
       component: () => import('../pages/AboutView.vue')
+    },
+    {
+      path: '/about-me',
+      name: 'about-me',
+      component: () => import('../pages/AboutMeView.vue')
     }
   ],
   scrollBehavior(to, from, savedPosition) {
