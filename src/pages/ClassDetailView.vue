@@ -445,9 +445,6 @@ const classesData = {
       "Memahami konsep limit dan kontinuitas fungsi",
       "Menguasai teknik diferensiasi (turunan)",
       "Memahami integral tak tentu dan tentu",
-      // "Aplikasi kalkulus dalam masalah nyata",
-      // "Teknik pengerjaan soal-soal UN dan SBMPTN",
-      // "Latihan soal dengan pembahasan lengkap",
     ],
     curriculum: [
       {
@@ -495,16 +492,9 @@ const classesData = {
       "Akses internet stabil",
       "Semangat belajar yang tinggi",
     ],
-    instructor: {
-      // name: "Dr. Ahmad Pratama",
-      // initials: "AP",
-      // title: "Dosen Matematika ITB",
-      // bio: "Pengalaman mengajar lebih dari 15 tahun di bidang matematika. Pernah menjadi pembicara di berbagai seminar nasional dan internasional.",
-      // students: "5,234",
-      // rating: "4.9",
-    },
+    instructor: {},
   },
-  // Add more class data as needed
+
   2: {
     id: 2,
     title: "Fisika SMA - Mekanika",

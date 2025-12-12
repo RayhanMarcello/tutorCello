@@ -4,6 +4,11 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
+      path: '/login',
+      name: 'login',
+      component: () => import('../pages/LoginView.vue')
+    },
+    {
       path: '/',
       name: 'home',
       component: () => import('../pages/HomeView.vue')
@@ -35,6 +40,25 @@ const router = createRouter({
     } else {
       return { top: 0 }
     }
+  }
+})
+
+// Navigation guard untuk authentication
+router.beforeEach((to, from, next) => {
+  const userData = localStorage.getItem('userData')
+  const isAuthenticated = !!userData
+
+  // Jika user mencoba akses halaman selain login dan belum login
+  if (to.path !== '/login' && !isAuthenticated) {
+    next('/login')
+  } 
+  // Jika user sudah login dan mencoba akses halaman login
+  else if (to.path === '/login' && isAuthenticated) {
+    next('/')
+  } 
+  // Lanjutkan ke halaman yang diminta
+  else {
+    next()
   }
 })
 
