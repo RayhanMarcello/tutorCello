@@ -243,6 +243,6 @@ const navLinks = [
   { name: "Kelas", path: "/kelas" },
   { name: "Harga", path: "/harga" },
   { name: "Tentang", path: "/tentang" },
-  { name: "About Me", path: "/about-me" },
+  // { name: "About Me", path: "/about-me" },
 ];
 </script>
