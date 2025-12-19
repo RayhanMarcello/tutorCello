@@ -122,8 +122,6 @@
             </h2>
             <VideoPlayer :videoSrc="previewVideoPath" />
             <p class="text-sm text-slate-500 mt-4">
-              * Video pembelajaran akan menggunakan file MP4 yang Anda upload ke
-              folder assets
             </p>
           </div>
 
